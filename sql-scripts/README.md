@@ -49,3 +49,10 @@ Repo for sharing my SQL Server scripts and stored procedures. These have largely
   
 # contributing
 Contributions are welcome! To contribute a change or enhancement, please issue a pull request for me to review and merge. If you have any questions, I can be reached on Twitter @sqlfool. 
+
+
+
+
+
+## reference: 
+https://github.com/MichelleUfford/sql-scripts
