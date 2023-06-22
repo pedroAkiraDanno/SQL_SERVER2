@@ -14,3 +14,5 @@ Popular:
 https://www.mssqltips.com/sqlservertip/5148/populate-large-tables-with-random-data-for-sql-server-performance-testing/
 
 https://medium.com/version-1/sql-server-create-a-table-of-random-data-aaa492887ff8
+
+https://www.sqlshack.com/sql-while-loop-understanding-while-loops-in-sql-server/ --explain: FOR, WHILE LOOP
