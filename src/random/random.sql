@@ -37,7 +37,7 @@ ORDER BY ID
 
 
 
---put scheduler 
+--put scheduler name: random_every_time
 DECLARE @cnt INT = 0;
 WHILE @cnt < 1000
 BEGIN
