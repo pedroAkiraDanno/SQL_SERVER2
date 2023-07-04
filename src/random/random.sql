@@ -1,13 +1,13 @@
 
 
 --create database to test 
-CREATE DATABASE big_log2;
+CREATE DATABASE big_log3;
 GO
 
 
 
 -- Select the rigth database 
-USE big_log2;
+USE big_log3;
 GO
 
 
@@ -183,12 +183,73 @@ Go
 
 ---REFE: https://www.sqlservercentral.com/scripts/entering-random-data-into-a-table
 
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------
--- RANDOM 4 - WITH JOB SCHEDULER 
+-- RANDOM 4 
+
+
+CREATE DATABASE ShoppingCart;
+GO
+
+USE ShoppingCart;
+GO
+
+CREATE TABLE Orders
+(
+  OrderId INT,
+  CustomerId INT,
+  Amount INT,
+  OrderDate DATETIME
+)
+GO
+
+CREATE TABLE OrdersHistory
+(
+  OrderId INT,
+  CustomerId INT,
+  Amount INT,
+  OrderDate DATETIME
+)
+GO
 
 
 
--- .....
+INSERT INTO Orders VALUES (101, 100001, 10000, GETDATE())
+INSERT INTO Orders VALUES (102, 100003, 10000, GETDATE())
+INSERT INTO Orders VALUES (103, 100001, 30000, GETDATE())
+INSERT INTO Orders VALUES (104, 100005, 50000, GETDATE())
+INSERT INTO Orders VALUES (105, 100003, 70000, GETDATE())
+
+
+
+--SCHEDULER
+INSERT INTO OrdersHistory SELECT * FROM ORDERS;
+
+--DELETE FROM ORDERS; 
+
+
+
+
+
+--REFERENCE: https://dotnettutorials.net/lesson/how-to-schedule-job-in-sql-server/
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+-- WITH JOB SCHEDULER 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
