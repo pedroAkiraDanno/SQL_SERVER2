@@ -37,6 +37,23 @@ ORDER BY ID
 
 
 
+--put scheduler 
+DECLARE @cnt INT = 0;
+WHILE @cnt < 1000
+BEGIN
+   SELECT
+   CONVERT(varchar(255), NEWID()),
+   FLOOR(RAND()*(100)+1);
+
+   SET @cnt = @cnt + 1;
+END;
+GO
+
+   
+
+
+   
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 --RANDOM 2 
