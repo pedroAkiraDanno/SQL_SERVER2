@@ -32,8 +32,8 @@ GO 100000 -- run 1000 times for 1000 rows of data
 
 
 -- Select all data in the table 
-SELECT * FROM t1
-ORDER BY ID
+SELECT * FROM t1 ORDER BY ID ; 
+SELECT COUNT(*) FROM t1 ; 
 
 
 
