@@ -243,10 +243,13 @@ INSERT INTO Orders VALUES (105, 100003, 70000, GETDATE())
 
 
 
---SCHEDULER
+--SCHEDULER  name: random_every_time_history
 INSERT INTO OrdersHistory SELECT * FROM ORDERS;
 
---DELETE FROM ORDERS; 
+--SCHEDULER  name: random_every_time_delete
+DELETE FROM OrdersHistory; 
+
+
 
 
 
