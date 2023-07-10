@@ -38,6 +38,7 @@ SELECT COUNT(*) FROM t1 ;
 
 
 --put scheduler name: random_every_time
+USE big_log3;
 DECLARE @cnt INT = 0;
 WHILE @cnt < 1000
 BEGIN
