@@ -110,7 +110,7 @@ if object_id('t1') is not null drop table t1
 CREATE TABLE t1(
     ID INT IDENTITY(1,1),
     intData INT,
-    datatime  date)
+    datatime  datetime)
 GO
 
 
