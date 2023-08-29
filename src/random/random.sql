@@ -292,6 +292,12 @@ DELETE FROM OrdersHistory;
 
 
 --DELETE DATABASE WITH (Graphical user interface) MODE
+--or 
+
+-- Excluindo dados de teste
+use master;
+drop database big_log3;
+GO
 
 
 
