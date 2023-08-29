@@ -20,6 +20,11 @@ USE big_log4;
 GO
 
 
+
+
+
+
+    
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 --RANDOM 1 
 
@@ -28,11 +33,14 @@ GO
 
 -- Create a temp table to hold some random data
 if object_id('t1') is not null drop table t1    
-CREATE TABLE t1(ID INT IDENTITY(1,1),
-stringData VARCHAR(255),
-intData INT)
+CREATE TABLE t1(
+    ID INT IDENTITY(1,1),
+    stringData VARCHAR(255),
+    intData INT
+    )
 GO
 
+    
 
 -- Add a GUID String & a Random Number between 1 & 100
 INSERT t1
@@ -43,36 +51,35 @@ GO 100000 -- run 1000 times for 1000 rows of data
 
 
     
--- Select all data in the table and QTD
---SELECT * FROM t1 ORDER BY ID ; 
+-- Select all data in the table and count
+SELECT top(10) * FROM t1 ORDER BY ID ; 
 
 DECLARE @CompatibilityLevel INT
-SET @CompatibilityLevel = (SELECT compatibility_level
-FROM sys.databases
+SET @CompatibilityLevel = (SELECT compatibility_level FROM sys.databases
 WHERE name = 'big_log3')
 
 IF @CompatibilityLevel < 150
 BEGIN
     -- Execute a query for compatibility level 100
-    SELECT COUNT(*) AS QTD
-    FROM t1;
+    SELECT COUNT(*) AS QTD FROM t1;
 END
 ELSE IF @CompatibilityLevel >= 150
 BEGIN
     -- Execute a query for compatibility level 150
-    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD
-    FROM t1;
-
+    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD  FROM t1;
 END
 
 
+
+
+    
 
 
 
 --put scheduler name: random_every_time
 USE big_log4;
 DECLARE @cnt INT = 0;
-WHILE @cnt < 1000
+WHILE @cnt < 10000
 BEGIN
       INSERT t1
       SELECT
