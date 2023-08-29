@@ -43,7 +43,7 @@ GO 100000 -- run 1000 times for 1000 rows of data
 
 
     
--- Select all data in the table 
+-- Select all data in the table and QTD
 --SELECT * FROM t1 ORDER BY ID ; 
 
 DECLARE @CompatibilityLevel INT
