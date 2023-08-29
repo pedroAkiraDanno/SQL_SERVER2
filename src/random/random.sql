@@ -4,7 +4,7 @@
 
 
 if db_id('big_log_random') is not null
-    drop database auditoria
+    drop database big_log_random
 go
 
       
