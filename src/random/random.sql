@@ -24,8 +24,10 @@ GO
 --RANDOM 1 
 
 
+    
 
 -- Create a temp table to hold some random data
+if object_id('t1') is not null drop table t1    
 CREATE TABLE t1(ID INT IDENTITY(1,1),
 stringData VARCHAR(255),
 intData INT)
