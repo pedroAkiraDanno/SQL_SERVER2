@@ -21,6 +21,10 @@ GO
 
 
 
+/* Switch on statistics time */
+SET STATISTICS TIME ON; 
+ 
+ 
 
 
 
@@ -189,7 +193,11 @@ END
 
 -- FINISH TEST 
 
+/* Switch off statistics time */
+SET STATISTICS TIME OFF; 
+GO
 
+    
 
 --DELETE DATABASE WITH (Graphical user interface) MODE
 --or 
