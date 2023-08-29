@@ -3,20 +3,20 @@
 ------------------------------------------------------------------
 
 
-if db_id('big_log_random') is not null
-    drop database big_log_random
+if db_id('big_log4') is not null
+    drop database big_log4
 go
 
       
 --create database to test 
-CREATE DATABASE big_log_random;
+CREATE DATABASE big_log4;
 GO
       
       
 
 
 -- Select the rigth database 
-USE big_log_random;
+USE big_log4;
 GO
 
 
@@ -49,7 +49,7 @@ SELECT COUNT(*) FROM t1 ;
 
 
 --put scheduler name: random_every_time
-USE big_log_random;
+USE big_log4;
 DECLARE @cnt INT = 0;
 WHILE @cnt < 1000
 BEGIN
@@ -296,7 +296,7 @@ DELETE FROM OrdersHistory;
 
 -- Excluindo dados de teste
 use master;
-drop database big_log_random;
+drop database big_log4;
 GO
 
 
