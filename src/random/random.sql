@@ -42,9 +42,30 @@ FLOOR(RAND()*(100)+1);
 GO 100000 -- run 1000 times for 1000 rows of data
 
 
+    
 -- Select all data in the table 
 SELECT * FROM t1 ORDER BY ID ; 
-SELECT COUNT(*) FROM t1 ; 
+
+DECLARE @CompatibilityLevel INT
+SET @CompatibilityLevel = (SELECT compatibility_level
+FROM sys.databases
+WHERE name = 'big_log3')
+
+IF @CompatibilityLevel < 150
+BEGIN
+    -- Execute a query for compatibility level 100
+    SELECT COUNT(*) AS QTD
+    FROM t1;
+END
+ELSE IF @CompatibilityLevel >= 150
+BEGIN
+    -- Execute a query for compatibility level 150
+    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD
+    FROM t1;
+
+END
+
+
 
 
 
