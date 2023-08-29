@@ -56,7 +56,7 @@ SELECT top(10) * FROM t1 ORDER BY ID ;
 
 DECLARE @CompatibilityLevel INT
 SET @CompatibilityLevel = (SELECT compatibility_level FROM sys.databases
-WHERE name = 'big_log3')
+WHERE name = 'big_log4')
 
 IF @CompatibilityLevel < 150
 BEGIN
@@ -93,13 +93,6 @@ GO
    
 
 
-
-
-
--- DROP TEST 
-USE big_log4;
-
-DROP TABLE t1;
 
 
 
@@ -145,7 +138,7 @@ SELECT top(10) * FROM t1 ORDER BY ID ;
 
 DECLARE @CompatibilityLevel INT
 SET @CompatibilityLevel = (SELECT compatibility_level FROM sys.databases
-WHERE name = 'big_log3')
+WHERE name = 'big_log4')
 
 IF @CompatibilityLevel < 150
 BEGIN
