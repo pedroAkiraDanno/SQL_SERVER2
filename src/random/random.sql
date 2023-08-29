@@ -44,7 +44,7 @@ GO 100000 -- run 1000 times for 1000 rows of data
 
     
 -- Select all data in the table 
-SELECT * FROM t1 ORDER BY ID ; 
+--SELECT * FROM t1 ORDER BY ID ; 
 
 DECLARE @CompatibilityLevel INT
 SET @CompatibilityLevel = (SELECT compatibility_level
