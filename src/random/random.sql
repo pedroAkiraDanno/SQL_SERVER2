@@ -3,20 +3,20 @@
 ------------------------------------------------------------------
 
 
-if db_id('big_log3') is not null
+if db_id('big_log_random') is not null
     drop database auditoria
 go
 
       
 --create database to test 
-CREATE DATABASE big_log3;
+CREATE DATABASE big_log_random;
 GO
       
       
 
 
 -- Select the rigth database 
-USE big_log3;
+USE big_log_random;
 GO
 
 
@@ -49,7 +49,7 @@ SELECT COUNT(*) FROM t1 ;
 
 
 --put scheduler name: random_every_time
-USE big_log3;
+USE big_log_random;
 DECLARE @cnt INT = 0;
 WHILE @cnt < 1000
 BEGIN
@@ -296,7 +296,7 @@ DELETE FROM OrdersHistory;
 
 -- Excluindo dados de teste
 use master;
-drop database big_log3;
+drop database big_log_random;
 GO
 
 
