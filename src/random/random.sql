@@ -1,9 +1,18 @@
+------------------------------------------------------------------
+-- Random SQL Server 
+------------------------------------------------------------------
 
 
+if db_id('big_log3') is not null
+    drop database auditoria
+go
+
+      
 --create database to test 
 CREATE DATABASE big_log3;
 GO
-
+      
+      
 
 
 -- Select the rigth database 
