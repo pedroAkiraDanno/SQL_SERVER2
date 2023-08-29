@@ -93,6 +93,86 @@ GO
    
 
 
+
+
+
+-- DROP TEST 
+USE big_log4;
+
+DROP TABLE t1;
+
+
+
+
+
+    
+---------------------------------------------------------------------------------------------------------------------------------------------------
+--RANDOM 2 
+
+
+    
+
+-- Create a temp table to hold some random data
+if object_id('t1') is not null drop table t1    
+CREATE TABLE t1(
+    ID INT IDENTITY(1,1),
+    intData INT,
+    time  data)
+GO
+
+
+
+
+--put scheduler name: random_every_time
+USE big_log4;
+DECLARE @cnt INT = 0;
+WHILE @cnt < 10000
+BEGIN
+    INSERT INTO t1 
+    VALUES (@cnt, getdate());
+
+   SET @cnt = @cnt + 1;
+END;
+GO
+
+    
+
+    
+
+   
+-- Select all data in the table and count
+SELECT top(10) * FROM t1 ORDER BY ID ; 
+
+DECLARE @CompatibilityLevel INT
+SET @CompatibilityLevel = (SELECT compatibility_level FROM sys.databases
+WHERE name = 'big_log3')
+
+IF @CompatibilityLevel < 150
+BEGIN
+    -- Execute a query for compatibility level 100
+    SELECT COUNT(*) AS QTD FROM t1;
+END
+ELSE IF @CompatibilityLevel >= 150
+BEGIN
+    -- Execute a query for compatibility level 150
+    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD  FROM t1;
+END
+
+
+
+
+    
+
+
+
+
+
+   
+
+
+
+
+    
    
 
 
