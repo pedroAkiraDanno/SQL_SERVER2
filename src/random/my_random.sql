@@ -22,7 +22,7 @@ GO
 
 
 /* Switch on statistics time */
-SET STATISTICS TIME ON; 
+--SET STATISTICS TIME ON; 
  
  
 
@@ -194,8 +194,8 @@ END
 -- FINISH TEST 
 
 /* Switch off statistics time */
-SET STATISTICS TIME OFF; 
-GO
+--SET STATISTICS TIME OFF; 
+
 
     
 
