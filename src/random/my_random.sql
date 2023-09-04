@@ -40,7 +40,8 @@ if object_id('t1') is not null drop table t1
 CREATE TABLE t1(
     ID INT IDENTITY(1,1),
     stringData VARCHAR(255),
-    intData INT
+    intData INT,
+    tempo  datetime
     )
 GO
 
@@ -50,7 +51,7 @@ GO
 INSERT t1
 SELECT
 CONVERT(varchar(255), NEWID()),
-FLOOR(RAND()*(100)+1);
+FLOOR(RAND()*(100)+1), getdate() ;
 GO 100000 -- run 1000 times for 1000 rows of data
 
 
@@ -88,7 +89,7 @@ BEGIN
       INSERT t1
       SELECT
       CONVERT(varchar(255), NEWID()),
-      FLOOR(RAND()*(100)+1);
+      FLOOR(RAND()*(100)+1), getdate();
 
    SET @cnt = @cnt + 1;
 END;
