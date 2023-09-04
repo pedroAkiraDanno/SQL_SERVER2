@@ -124,7 +124,7 @@ GO
 --put scheduler name: random_every_time
 USE big_log4;
 DECLARE @cnt INT = 0;
-WHILE @cnt < 10000
+WHILE @cnt < 100000
 BEGIN
     INSERT INTO t1 
     VALUES (@cnt, getdate());
