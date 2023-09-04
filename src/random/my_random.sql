@@ -71,7 +71,7 @@ END
 ELSE IF @CompatibilityLevel >= 150
 BEGIN
     -- Execute a query for compatibility level 150
-    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD  FROM t1;
+    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD_APPROX  FROM t1;
 END
 
 
@@ -153,7 +153,7 @@ END
 ELSE IF @CompatibilityLevel >= 150
 BEGIN
     -- Execute a query for compatibility level 150
-    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD  FROM t1;
+    SELECT APPROX_COUNT_DISTINCT(ID) AS QTD_APPROX  FROM t1;
 END
 
 
