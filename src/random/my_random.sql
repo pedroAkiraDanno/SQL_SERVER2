@@ -11,7 +11,21 @@ go
 --create database to test 
 CREATE DATABASE big_log4;
 GO
-      
+
+
+
+
+USE [master]
+GO
+ALTER DATABASE [big_log4]
+MODIFY FILE ( NAME = N'big_log4', FILEGROWTH = 512MB )
+GO
+ALTER DATABASE [big_log4]
+MODIFY FILE ( NAME = N'big_log4_log', FILEGROWTH = 256MB )
+GO
+
+
+
       
 
 
