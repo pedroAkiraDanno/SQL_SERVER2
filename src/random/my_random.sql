@@ -14,7 +14,7 @@ GO
 
 
 
-
+--Autogrowth
 USE [master]
 GO
 ALTER DATABASE [big_log4]
