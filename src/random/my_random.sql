@@ -209,7 +209,7 @@ END
 -- FINISH TEST 
 
 /* Switch off statistics time */
---SET STATISTICS TIME OFF; 
+SET STATISTICS TIME OFF; 
 
 
     
