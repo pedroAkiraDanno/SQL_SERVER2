@@ -36,7 +36,7 @@ GO
 
 
 /* Switch on statistics time */
---SET STATISTICS TIME ON; 
+SET STATISTICS TIME ON; 
  
  
 
