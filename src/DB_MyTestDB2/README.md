@@ -2,12 +2,12 @@
 
 
 
-create db 
+create db <br/>
   ./Createdb.sql
 
 
 
-run table
+run table <br/>
   ./UserTab.sql
 
 
