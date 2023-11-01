@@ -2,7 +2,7 @@
 GO
 
 /****** Object:  Database [MyTestDB2]    Script Date: 10/31/2023 8:39:49 AM ******/
-CREATE DATABASE [MyTestDB2];
+CREATE DATABASE [MyTestDB2]
 GO
 
 
@@ -14,12 +14,9 @@ GO
 USE  [MyTestDB2]
 GO
 
-﻿CREATE TABLE [dbo].[UserTab]
+CREATE TABLE [UserTab]
 (
-	  [Id] INT NULL PRIMARY KEY, 
-    [Name] NCHAR(100) NULL, 
-    [Age] FLOAT NULL
+    [Id] INT,
+    [Name] NCHAR(100),
+    [Age] INT
 )
-GO
-
-
