@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+-- TABLE WITH PRIMARY KEY 
+
 -- Create a new table called "Employees"
 CREATE TABLE Employees (
     EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
@@ -15,5 +26,48 @@ VALUES
     ('Michael', 'Johnson', 'Finance', 65000.00),
     ('Emily', 'Williams', 'Marketing', 58000.00);
 GO 10000
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- NO PRMARY KEY    
+
+
+
+-- Create a new table called "Employees"
+CREATE TABLE Employees (
+    EmployeeID INT ,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+-- Insert some sample data into the "Employees" table
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES 
+    (1, 'John', 'Doe', 'IT', 60000.00),
+    (2, 'Jane', 'Smith', 'HR', 55000.00),
+    (3, 'Michael', 'Johnson', 'Finance', 65000.00),
+    (4, 'Emily', 'Williams', 'Marketing', 58000.00);
+GO 10000
+
+
+
+
+
+
+
+
+
+
+
+
 
 
