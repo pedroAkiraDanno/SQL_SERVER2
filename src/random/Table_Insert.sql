@@ -32,6 +32,15 @@ GO 10000
 
 
 
+SELECT COUNT(*) FROM dbo.Employees;
+
+SELECT COUNT(*) FROM dbo.Employees;
+
+--SELECT * FROM dbo.Employees;
+
+    
+
+
 
 
 
