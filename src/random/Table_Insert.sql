@@ -33,7 +33,7 @@ GO 10000
 
 
 --put scheduler name: random_every_time
-USE big_log4;
+--USE big_log4;
 DECLARE @cnt INT = 0;
 WHILE @cnt < 10000
 BEGIN
