@@ -32,6 +32,25 @@ GO 10000
 
 
 
+--put scheduler name: random_every_time
+USE big_log4;
+DECLARE @cnt INT = 0;
+WHILE @cnt < 10000
+BEGIN
+        INSERT INTO Employees (FirstName, LastName, Department, Salary)
+        VALUES 
+            ('John', 'Doe', 'IT', 60000.00),
+            ('Jane', 'Smith', 'HR', 55000.00),
+            ('Michael', 'Johnson', 'Finance', 65000.00),
+            ('Emily', 'Williams', 'Marketing', 58000.00);
+
+   SET @cnt = @cnt + 1;
+END;
+GO
+    
+
+
+
 SELECT COUNT(*) FROM dbo.Employees;
 
 SELECT COUNT(*) FROM dbo.Employees;
