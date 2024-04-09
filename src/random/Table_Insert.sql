@@ -51,7 +51,6 @@ GO
 
 
 
-SELECT COUNT(*) FROM dbo.Employees;
 
 SELECT COUNT(*) FROM dbo.Employees;
 
