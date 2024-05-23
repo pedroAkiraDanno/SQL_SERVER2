@@ -75,6 +75,7 @@ COMMIT TRANSACTION;
 /*Step 4: Check Log File Size
 To check the current size of the log file, use the following query:*/
 
+/*
 USE LargeLogDB;
 
 SELECT 
@@ -85,6 +86,24 @@ SELECT
     growth/128 AS [Growth in MB]
 FROM sys.master_files
 WHERE type_desc = 'LOG' AND database_id = DB_ID('LargeLogDB');
+*/
+
+
+USE LargeLogDB;
+
+SELECT 
+    Name AS [File Name],
+    Physical_Name AS [Physical Name], 
+    size/128 AS [Total Size in MB],
+    size/128/1024 AS [Total Size in GB],
+    max_size/128 AS [Max Size in MB],
+    max_size/128/1024 AS [Max Size in GB],
+    growth/128 AS [Growth in MB],
+    growth/128/1024 AS [Growth in GB]
+FROM sys.master_files
+WHERE type_desc = 'LOG' AND database_id = DB_ID('LargeLogDB');
+
+
 
 
 
