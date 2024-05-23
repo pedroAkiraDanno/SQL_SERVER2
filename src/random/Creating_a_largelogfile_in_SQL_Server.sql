@@ -44,6 +44,7 @@ ALTER DATABASE LargeLogDB SET RECOVERY FULL;
 /*Step 3: Create a Table and Insert Data
 Create a table and insert a large amount of data to increase the log file size. Using transactions will help generate more log entries.*/
 
+/*
 USE LargeLogDB;
 
 CREATE TABLE LargeTable (
@@ -67,7 +68,7 @@ BEGIN
     END
 END
 COMMIT TRANSACTION;
-
+*/
 
 
 
