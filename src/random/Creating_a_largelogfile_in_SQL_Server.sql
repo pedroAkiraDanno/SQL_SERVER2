@@ -72,6 +72,59 @@ COMMIT TRANSACTION;
 
 
 
+
+
+/*
+
+To insert data that will generate a log file of approximately 1 GB in size, we need to ensure that the data and transactions are large enough to create the desired log file size. The script provided inserts rows into a table with each row containing 8000 characters, but it may need adjustments to reach 1 GB precisely.
+
+Here's a revised version of the script with an increased number of rows to ensure the log file grows to about 1 GB:
+
+*/
+
+
+USE LargeLogDB;
+
+-- Step 1: Create the table
+CREATE TABLE LargeTable (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Data CHAR(8000) DEFAULT REPLICATE('A', 8000)
+);
+
+-- Step 2: Insert data in a loop to generate a large log file
+-- Each row is 8000 bytes, and we need 131072 rows to approximate 1 GB (1024 * 1024 * 1024 bytes)
+DECLARE @counter INT = 0;
+DECLARE @batchSize INT = 1000;
+
+BEGIN TRANSACTION;
+WHILE @counter < 131072
+BEGIN
+    INSERT INTO LargeTable DEFAULT VALUES;
+    SET @counter = @counter + 1;
+    
+    -- Commit every 1000 rows to keep log file growth manageable
+    IF @counter % @batchSize = 0
+    BEGIN
+        COMMIT TRANSACTION;
+        BEGIN TRANSACTION;
+    END
+END
+COMMIT TRANSACTION;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Step 4: Check Log File Size
 To check the current size of the log file, use the following query:*/
 
