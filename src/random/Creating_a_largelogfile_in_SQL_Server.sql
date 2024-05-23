@@ -7,6 +7,11 @@ Creating a large log file in SQL Server using T-SQL can be done in a few steps. 
 
 
 
+
+
+
+
+--[STEP 1]
 /*
 Step 1: Create a New Database
 First, create a new database where you will configure the log file size.
@@ -33,6 +38,9 @@ LOG ON
 
 
 
+
+
+--[STEP 2]
 /*Step 2: Configure Recovery Model
 Set the recovery model to FULL to ensure every transaction is logged.*/
 
@@ -41,6 +49,10 @@ ALTER DATABASE LargeLogDB SET RECOVERY FULL;
 
 
 
+
+
+
+--[STEP 3]
 /*Step 3: Create a Table and Insert Data
 Create a table and insert a large amount of data to increase the log file size. Using transactions will help generate more log entries.*/
 
@@ -84,6 +96,7 @@ Here's a revised version of the script with an increased number of rows to ensur
 */
 
 
+/*
 USE LargeLogDB;
 
 -- Step 1: Create the table
@@ -111,6 +124,7 @@ BEGIN
     END
 END
 COMMIT TRANSACTION;
+*/
 
 
 
@@ -126,6 +140,9 @@ COMMIT TRANSACTION;
 
 
 
+
+
+--[STEP 4]
 /*Step 4: Check Log File Size
 To check the current size of the log file, use the following query:*/
 
@@ -170,6 +187,9 @@ GO
 
 
 
+
+
+--[STEP 5]    
 --[OPTION]
 /*Step 5: Optional - Manually Increase Log File Size
 If you want to manually set the log file to a large size:*/
