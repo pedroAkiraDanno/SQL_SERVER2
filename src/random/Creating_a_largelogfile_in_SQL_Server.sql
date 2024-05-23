@@ -162,6 +162,7 @@ WHERE type_desc = 'LOG' AND database_id = DB_ID('LargeLogDB');
 
 
 --[COUNT]
+USE LargeLogDB;
 SELECT COUNT(*) FROM LargeTable;
 GO
 
