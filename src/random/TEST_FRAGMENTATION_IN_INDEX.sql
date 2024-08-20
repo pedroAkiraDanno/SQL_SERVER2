@@ -1,20 +1,10 @@
-Sure, I can help with that. To test index fragmentation in SQL Server, you'll need to follow a few steps:
 
 
 
-test index fragmentation in SQL Server
+-- test index fragmentation in SQL Server
 
 
-
-
-
-
-
-
-
-
-
-
+/*
 1. **Create a Table**
 2. **Add Random Data**
 3. **Create an Index**
@@ -26,20 +16,21 @@ Here’s a step-by-step guide:
 ### 1. Create a Table
 
 Let's start by creating a sample table:
+*/
 
-```sql
+
 CREATE TABLE TestTable (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     Name NVARCHAR(50),
     Value INT
 );
-```
 
-### 2. Add Random Data
 
-We’ll insert some random data into the table. For simplicity, I'll use a loop to insert data:
+-- ### 2. Add Random Data
 
-```sql
+-- We’ll insert some random data into the table. For simplicity, I'll use a loop to insert data:
+
+
 DECLARE @i INT = 1;
 
 WHILE @i <= 1000
@@ -49,38 +40,30 @@ BEGIN
     
     SET @i = @i + 1;
 END
-```
 
-### 3. Create an Index
 
-Now, create an index on the `Value` column to test fragmentation:
-
-```sql
+--### 3. Create an Index
+--Now, create an index on the `Value` column to test fragmentation:
 CREATE NONCLUSTERED INDEX IDX_Value ON TestTable(Value);
-```
 
-### 4. Update, Delete, and Insert Data
 
-Perform some operations to fragment the index. You can use a variety of commands to do this:
+--### 4. Update, Delete, and Insert Data
+--Perform some operations to fragment the index. You can use a variety of commands to do this:
 
-#### Update Data
 
-```sql
+
+--#### Update Data
 UPDATE TestTable
 SET Value = Value + 10
 WHERE ID % 2 = 0;
-```
 
-#### Delete Data
 
-```sql
+--#### Delete Data
 DELETE FROM TestTable
 WHERE ID % 10 = 0;
-```
 
-#### Insert More Data
 
-```sql
+-- #### Insert More Data
 DECLARE @j INT = 1;
 
 WHILE @j <= 500
@@ -90,13 +73,12 @@ BEGIN
     
     SET @j = @j + 1;
 END
-```
 
-### 5. Check Index Fragmentation
 
-You can use the following query to check the fragmentation level of your index:
+-- ### 5. Check Index Fragmentation
+-- You can use the following query to check the fragmentation level of your index:
 
-```sql
+
 -- Check index fragmentation
 SELECT 
     OBJECT_NAME(IPS.OBJECT_ID) AS TableName,
@@ -110,15 +92,14 @@ WHERE
     OBJECTPROPERTY(IX.object_id, 'IsUserTable') = 1
 ORDER BY 
     FragmentationPercent DESC;
-```
 
-This query provides information about the level of fragmentation for each index.
 
-### Summary
+--This query provides information about the level of fragmentation for each index.
+-- ### Summary
 
-By following these steps, you'll have a table with a non-clustered index, and you'll perform various data manipulation operations that should cause fragmentation. You can then check the fragmentation level to see how your index is affected.
+-- By following these steps, you'll have a table with a non-clustered index, and you'll perform various data manipulation operations that should cause fragmentation. You can then check the fragmentation level to see how your index is affected.
 
-Let me know if you need further details or assistance!
+-- Let me know if you need further details or assistance!
 
 
 
