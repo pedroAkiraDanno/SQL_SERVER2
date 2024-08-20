@@ -62,7 +62,7 @@ BEGIN
         SET @j = @j + 1;
     END
 
-    SELECT 
+    /*SELECT 
         OBJECT_NAME(IPS.OBJECT_ID) AS TableName,
         IX.name AS IndexName,
         IPS.index_id AS IndexID,
@@ -73,7 +73,7 @@ BEGIN
     WHERE 
         OBJECTPROPERTY(IX.object_id, ''IsUserTable'') = 1
     ORDER BY 
-        FragmentationPercent DESC;
+        FragmentationPercent DESC;*/
     ';
 
     -- Execute the SQL command in the current database
