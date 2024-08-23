@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 -- Declare a cursor to iterate through all databases
 DECLARE @DatabaseName NVARCHAR(255);
 DECLARE @SQL NVARCHAR(MAX);
