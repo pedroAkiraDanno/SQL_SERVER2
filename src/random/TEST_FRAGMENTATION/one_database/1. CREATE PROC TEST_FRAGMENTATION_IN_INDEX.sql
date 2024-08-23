@@ -7,7 +7,7 @@ USE DATABASENAME; -- CHANGE TO DATABASE NAME YOU WANT
 
 
 
-CREATE PROCEDURE TestIndexFragmentation
+CREATE OR ALTER  PROCEDURE TestIndexFragmentation
 AS
 BEGIN
     -- 1. Create a Table
