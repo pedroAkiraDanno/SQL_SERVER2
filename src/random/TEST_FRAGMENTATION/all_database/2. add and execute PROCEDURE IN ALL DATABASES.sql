@@ -32,6 +32,7 @@ BEGIN
     IF OBJECT_ID(''dbo.TestTable'', ''U'') IS NOT NULL
     BEGIN
         DROP TABLE dbo.TestTable;
+		
     END
     
     CREATE TABLE dbo.TestTable (
