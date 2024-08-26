@@ -14,6 +14,7 @@ DECLARE db_cursor CURSOR FOR
 SELECT name
 FROM sys.databases
 WHERE state_desc = 'ONLINE' -- Exclude offline databases
+AND NAME LIKE 'DB_TF_%'	
 AND name NOT IN ('master', 'tempdb', 'model', 'msdb'); -- Exclude system databases
 
 -- Open the cursor
