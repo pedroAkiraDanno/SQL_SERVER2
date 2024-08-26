@@ -21,13 +21,19 @@ FETCH NEXT FROM db_cursor INTO @dbname;
 WHILE @@FETCH_STATUS = 0
 BEGIN
     -- Build the SQL command to drop the database
-    SET @sql = 'DROP DATABASE [' + @dbname + ']; GO';
+    --SET @sql = 'DROP DATABASE [' + @dbname + ']; ';
+    -- Build the SQL command to drop the database
+    SET @sql = 'use master;
+				GO
+				DROP DATABASE [' + @dbname + ']; 
+				GO';
 
+    
     -- Print the SQL command (for debugging purposes)
     PRINT @sql;
 
     -- Execute the SQL command
-    EXEC sp_executesql @sql;
+    --EXEC sp_executesql @sql;
 
     -- Fetch the next database name
     FETCH NEXT FROM db_cursor INTO @dbname;
