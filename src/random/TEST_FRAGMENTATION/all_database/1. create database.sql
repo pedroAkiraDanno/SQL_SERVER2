@@ -7,7 +7,7 @@
 			-- WHILE @i <= 10
 			-- BEGIN
 				-- -- Generate a random name using a combination of 'DB_' and a number
-				-- DECLARE @dbname NVARCHAR(50) = CONCAT('DB_', @i);
+				-- DECLARE @dbname NVARCHAR(50) = CONCAT('DB_TF_', @i);
 				
 				-- -- Construct the SQL statement to create the database
 				-- DECLARE @sql NVARCHAR(MAX) = CONCAT('CREATE DATABASE ', @dbname, ';');
@@ -35,7 +35,7 @@
 		-- Generate a random name using a combination of letters and numbers
 		DECLARE @dbname NVARCHAR(50) = 
 			CONCAT(
-				'DB_', 
+				'DB_TF_', 
 				CHAR(65 + ABS(CHECKSUM(NEWID()) % 26)), -- Random letter A-Z
 				CHAR(65 + ABS(CHECKSUM(NEWID()) % 26)), -- Random letter A-Z
 				CHAR(48 + ABS(CHECKSUM(NEWID()) % 10)), -- Random digit 0-9
