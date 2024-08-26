@@ -21,7 +21,7 @@ FETCH NEXT FROM db_cursor INTO @dbname;
 WHILE @@FETCH_STATUS = 0
 BEGIN
     -- Build the SQL command to drop the database
-    SET @sql = 'DROP DATABASE [' + @dbname + '];';
+    SET @sql = 'DROP DATABASE [' + @dbname + ']; GO';
 
     -- Print the SQL command (for debugging purposes)
     PRINT @sql;
