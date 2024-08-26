@@ -8,6 +8,7 @@ SELECT name
 FROM sys.databases
 WHERE create_date >= CAST(GETDATE() AS DATE)
 AND create_date < DATEADD(DAY, 1, CAST(GETDATE() AS DATE))
+AND name like 'DB_TF_%'
 AND name NOT IN ('master', 'tempdb', 'model', 'msdb'); -- Exclude system databases
 
 -- Open the cursor
