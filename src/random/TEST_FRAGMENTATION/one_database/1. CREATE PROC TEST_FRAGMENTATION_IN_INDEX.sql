@@ -23,6 +23,7 @@ BEGIN
     );
 
     -- 2. Add Random Data
+    PRINT 'adding Random Data... '
     DECLARE @i INT = 1;
 
     WHILE @i <= 50000
@@ -38,15 +39,18 @@ BEGIN
 
     -- 4. Update, Delete, and Insert Data
     -- Update Data
+    PRINT 'Updating Data... '
     UPDATE dbo.TestTable
     SET Value = Value + 10
     WHERE ID % 2 = 0;
 
     -- Delete Data
+    PRINT 'Deleting Data... '
     DELETE FROM dbo.TestTable
     WHERE ID % 10 = 0;
 
     -- Insert More Data
+    PRINT 'Inserting More Data... '
     DECLARE @j INT = 1;
 
     WHILE @j <= 50000
@@ -58,6 +62,7 @@ BEGIN
     END
 
     -- 5. Check Index Fragmentation
+    PRINT 'Checking Index Fragmentation ... '        
     SELECT 
         OBJECT_NAME(IPS.OBJECT_ID) AS TableName,
         IX.name AS IndexName,
